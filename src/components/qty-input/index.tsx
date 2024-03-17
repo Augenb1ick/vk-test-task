@@ -16,7 +16,7 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
     inputValue = 1,
     onChangeValue,
 }) => {
-    const handleChangeValue = (e, newValue: number | null) =>
+    const handleChangeValue = (e: unknown, newValue: number | null) =>
         onChangeValue(newValue);
 
     return (

@@ -14,7 +14,11 @@ const CartItem: FC<CartItemProps> = ({ item, onChangeQty, onRemove }) => {
     const { title, description, price, qty, image } = item;
 
     const callbacks = {
-        onChangeQty: (qty: number) => onChangeQty(item, qty),
+        onChangeQty: (qty: number | null) => {
+            if (qty === null) {
+                onChangeQty(item, 1);
+            } else onChangeQty(item, qty);
+        },
         onRemove: () => onRemove(item),
     };
 
@@ -72,7 +76,7 @@ const CartItem: FC<CartItemProps> = ({ item, onChangeQty, onRemove }) => {
                 </Typography>
                 <QuantityInput
                     inputValue={qty}
-                    onChangeValue={(value: number) =>
+                    onChangeValue={(value: number | null) =>
                         callbacks.onChangeQty(value)
                     }
                 />
