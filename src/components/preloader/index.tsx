@@ -1,12 +1,10 @@
-import './style.css';
+import { Box, CircularProgress } from '@mui/material';
 
 const Preloader = () => {
     return (
-        <div className='Preloader'>
-            <div className='Preloader-container'>
-                <span className='Preloader-circle'></span>
-            </div>
-        </div>
+        <Box sx={{ display: 'flex' }}>
+            <CircularProgress sx={{ margin: 'auto' }} />
+        </Box>
     );
 };
 

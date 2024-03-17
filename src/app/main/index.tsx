@@ -32,7 +32,7 @@ const Main = () => {
     }, [dispatch]);
 
     return (
-        <Box padding={'20px'}>
+        <Box padding={'20px'} minHeight={'65vh'}>
             {!items.length ? (
                 <Preloader />
             ) : (
