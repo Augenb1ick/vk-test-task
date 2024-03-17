@@ -1,4 +1,4 @@
-import { Badge, BadgeProps, Button, IconButton, styled } from '@mui/material';
+import { Badge, BadgeProps, Button, styled } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { FC } from 'react';
 import { useAppSelector } from '../../hooks/reduxHook';

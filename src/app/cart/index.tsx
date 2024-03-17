@@ -17,10 +17,13 @@ import CartTotal from '../../components/cart-total';
 const Cart = () => {
     const dispatch = useDispatch();
 
-    const cartItems = useAppSelector((state) => state.cart.list);
+    const {
+        list: cartItems,
+        totalQty,
+        totalSum,
+    } = useAppSelector((state) => state.cart);
+
     const cartIsOpen = useAppSelector((state) => state.modal.isOpen);
-    const totalQty = useAppSelector((state) => state.cart.totalQty);
-    const totalSum = useAppSelector((state) => state.cart.totalSum);
 
     const callbacks = {
         onCloseCart: () => dispatch(closeModal()),

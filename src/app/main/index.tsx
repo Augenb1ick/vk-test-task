@@ -6,6 +6,7 @@ import { Item } from '../../models/Item';
 import { loadItems } from '../../store/slices/catalogueSlice';
 import CatalogueItem from '../../components/catalogue-item';
 import { addToCart } from '../../store/slices/cartSlice';
+import Preloader from '../../components/preloader';
 
 const Main = () => {
     const dispatch = useAppDispatch();
@@ -32,7 +33,11 @@ const Main = () => {
 
     return (
         <Box padding={'20px'}>
-            <List items={items} renderItem={renders.item} />
+            {!items.length ? (
+                <Preloader />
+            ) : (
+                <List items={items} renderItem={renders.item} />
+            )}
         </Box>
     );
 };

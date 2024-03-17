@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type ModalState = {
     isOpen: boolean;
-    modalType: string | null; // Может содержать тип модального окна, например, 'login', 'register' и т. д.
+    modalType: string | null;
 };
 
 const initialState: ModalState = {

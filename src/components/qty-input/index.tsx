@@ -7,7 +7,15 @@ import { styled } from '@mui/system';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 
-export default function QuantityInput({ inputValue = 1, onChangeValue }) {
+interface QuantityInputProps {
+    inputValue: number;
+    onChangeValue: (newValue: number | null) => void;
+}
+
+const QuantityInput: React.FC<QuantityInputProps> = ({
+    inputValue = 1,
+    onChangeValue,
+}) => {
     const handleChangeValue = (e, newValue: number | null) =>
         onChangeValue(newValue);
 
@@ -21,7 +29,9 @@ export default function QuantityInput({ inputValue = 1, onChangeValue }) {
             value={inputValue}
         />
     );
-}
+};
+
+export default QuantityInput;
 
 const NumberInput = React.forwardRef(function CustomNumberInput(
     props: NumberInputProps,

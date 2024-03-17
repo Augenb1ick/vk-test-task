@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { CartItemType } from '../../models/CartItem';
 import { Box, Button, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
